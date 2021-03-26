@@ -1,0 +1,30 @@
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+int main()
+{
+	string inp;
+	cin >> inp;
+	sort(inp.begin(), inp.end());
+	int xx = inp.size(),c=0,d;
+	d = inp.size();
+	string b = inp;
+	cout << inp << endl;
+	while (d!=0) {
+		for (int x = xx - 1; x > 1; x--) {
+			string a;
+			swap(inp[x - 1], inp[x]);
+			if (inp == b)break;
+			else cout <<inp << endl;
+		}
+		if (inp== b) {
+			swap(inp[0], inp[c+1]);
+			b = inp;
+			c++;
+			d--;
+			if (d == 0)break;
+			cout << inp<<endl;
+		}
+	}
+}
